@@ -1,0 +1,9 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programs/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 05b9415faf9a4575834807cef093a406 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot structural_behav xil_defaultlib.structural -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <X> does not exist in entity <gateNand2>.  Please compare the definition of block <gateNand2> to its component declaration and its instantion to detect the mismatch. [D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/structural.vhd:32]
+ERROR: [VRFC 10-718] formal port <Y> does not exist in entity <gateNand2>.  Please compare the definition of block <gateNand2> to its component declaration and its instantion to detect the mismatch. [D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/structural.vhd:33]
+ERROR: [VRFC 10-718] formal port <Fout> does not exist in entity <gateNand2>.  Please compare the definition of block <gateNand2> to its component declaration and its instantion to detect the mismatch. [D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/structural.vhd:34]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit structural in library work failed.

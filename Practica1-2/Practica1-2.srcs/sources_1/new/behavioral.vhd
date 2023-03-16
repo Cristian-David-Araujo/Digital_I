@@ -12,6 +12,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+--========================================================================
+--This code in VHDL is for generate the next funtional combinational circuit with 3 inputs and 1 output
+
+-- F = (AB) + C'
+-- F = ((AB)'C)'
+--========================================================================
+
 entity behavioral is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
@@ -22,6 +29,25 @@ end behavioral;
 architecture Behavioral of behavioral is
 
 begin
-
+    process(A,B,C)
+    begin
+        if (A='1' and B='1' and C='1') then
+            Fout <= '1';
+        elsif (A='1' and B='1' and C='0') then
+            Fout <= '1';
+        elsif (A='1' and B='0' and C='1') then
+            Fout <= '0';
+        elsif (A='1' and B='0' and C='0') then
+            Fout <= '1';
+        elsif (A='0' and B='1' and C='1') then
+            Fout <= '0';
+        elsif (A='0' and B='1' and C='0') then
+            Fout <= '1';
+        elsif (A='0' and B='0' and C='1') then
+            Fout <= '0';
+        elsif (A='0' and B='0' and C='0') then
+            Fout <= '1';
+        end if;
+    end process;
 
 end Behavioral;

@@ -1,6 +1,3 @@
-
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -13,6 +10,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+--========================================================================
+--This code in VHDL is for generate the next funtional combinational circuit with 3 inputs and 1 output
+
+-- F = (AB) + C'
+-- F = ((AB)'C)'
+--========================================================================
 entity dataFlow is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
@@ -23,6 +26,5 @@ end dataFlow;
 architecture Behavioral of dataFlow is
 
 begin
-
-
+    Fout <= (A and B) or (not C); 
 end Behavioral;

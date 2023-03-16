@@ -11,6 +11,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+
+--========================================================================
+--This code in VHDL is for generate the next funtional combinational circuit with 3 inputs and 1 output
+
+-- F = (AB) + C'
+-- F = ((AB)'C)'
+--========================================================================
+
 entity structural is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
@@ -20,7 +28,20 @@ end structural;
 
 architecture Behavioral of structural is
 
+    component gateNand2
+        Port ( X : in STD_LOGIC;
+               Y : in STD_LOGIC;
+               Fout : out STD_LOGIC);
+    end component;
+
+    --This is out of firtst gate nand
+    signal Fout1 : STD_LOGIC;
 begin
 
+    gateNand2_1 : gateNand2
+        Port map (X => A, Y => B, Fout => Fout1);
+    
+    gateNand2_2 : gateNand2
+        Port map (X => Fout1, Y => C, Fout => Fout);
 
 end Behavioral;
