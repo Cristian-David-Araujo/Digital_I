@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.runs/synth_1/structural.tcl"
+  variable script "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.runs/synth_1/completeAssembly.tcl"
   variable category "vivado_synth"
 }
 
@@ -85,8 +85,11 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/behavioral.vhd}
+  {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/dataFlow.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/gateNand2.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/structural.vhd}
+  {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/completeAssembly.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -104,17 +107,17 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top structural -part xc7a35tcpg236-1
+synth_design -top completeAssembly -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef structural.dcp
+write_checkpoint -force -noxdef completeAssembly.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file structural_utilization_synth.rpt -pb structural_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file completeAssembly_utilization_synth.rpt -pb completeAssembly_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
