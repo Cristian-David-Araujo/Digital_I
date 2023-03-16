@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 15.03.2023 19:34:11
--- Design Name: 
--- Module Name: gateNand2 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -31,13 +10,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+--========================================================================
+--This code in VHDL is for generate a Nand gate with 2 inputs
+--========================================================================
 entity gateNand2 is
---  Port ( );
+    Port ( X : in STD_LOGIC;
+           Y : in STD_LOGIC;
+           Fout : out STD_LOGIC);
 end gateNand2;
 
 architecture Behavioral of gateNand2 is
 
 begin
-
-
+    Fout <= X nand Y;
 end Behavioral;

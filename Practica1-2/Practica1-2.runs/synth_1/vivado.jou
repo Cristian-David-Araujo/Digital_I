@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Mar 15 22:12:46 2023
+# Process ID: 26976
+# Current directory: D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.runs/synth_1
+# Command line: vivado.exe -log structural.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source structural.tcl
+# Log file: D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.runs/synth_1/structural.vds
+# Journal file: D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source structural.tcl -notrace

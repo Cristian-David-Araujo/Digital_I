@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.numeric_std.all;
 
 use STD.textio.all;
 use IEEE.std_logic_textio.all;
@@ -44,7 +45,7 @@ architecture behavior of test is
     --This are the signals of the testbench
     --The signals are the same for the three components because they are the same circuit
     --The orden of vector is [A,B,C]
-    signal ABCinput : STD_LOGIC_VECTOR(2 downto 0);
+    signal ABCinput : STD_LOGIC_VECTOR(2 downto 0) := "000";
 
     --Those signal are for the output of the three components
     signal Fbehavioral : STD_LOGIC;
@@ -56,12 +57,12 @@ architecture behavior of test is
 
     --This part generates the expected output
     procedure expectedOutput (
-        ABCinput : STD_LOGIC_VECTOR(2 downto 0);
-        Fout : STD_LOGIC) is
+        signal ABCinput : in STD_LOGIC_VECTOR(2 downto 0);
+        signal Fout : out STD_LOGIC) is
         
     begin
         --This is the expected output for the three components
-        Fout <= (A and B) or (not C);
+        Fout <= (ABCinput(2) and ABCinput(1)) or (not ABCinput(0));
     end expectedOutput;
 
     begin
@@ -83,18 +84,21 @@ architecture behavior of test is
             B => ABCinput(1),
             C => ABCinput(0),
             Fout => FdataFlow);
-
+        
         --This part generates the expected output
-        process()
+        expectedOutput(ABCinput,Fexpected);
+        
+        --Here is the testbench, we test the three components with the same input
+        --Probe all posible inputs
+        process is
             variable i : integer := 0;
         begin
 
             for i in 0 to 7 loop
-                --This is the expected output for the three components
-                expectedOutput(ABCinput,Fexpected);
                 --This is the input for the components
+                --to_unsigned get out a number i in vector std logic vector with 3 bits
                 ABCinput <= std_logic_vector(to_unsigned(i,3));
-
+                
                 if (Fexpected = Fbehavioral) and (Fexpected = Fstructural) and (Fexpected = FdataFlow) then
                     report "Test passed" severity note;
                 else

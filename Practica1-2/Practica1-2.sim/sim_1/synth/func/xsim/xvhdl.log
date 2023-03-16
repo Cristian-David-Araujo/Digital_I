@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/behavioral.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'behavioral'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/dataFlow.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'dataFlow'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sim_1/new/test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test'
