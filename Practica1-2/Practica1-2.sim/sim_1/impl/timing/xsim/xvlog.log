@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.sim/sim_1/impl/timing/xsim/test_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module behavioral
+INFO: [VRFC 10-311] analyzing module completeAssembly
+INFO: [VRFC 10-311] analyzing module glbl

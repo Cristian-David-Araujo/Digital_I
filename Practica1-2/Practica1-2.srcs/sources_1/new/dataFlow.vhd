@@ -26,5 +26,5 @@ end dataFlow;
 architecture Behavioral of dataFlow is
 
 begin
-    Fout <= (A and B) or (not C); 
+    Fout <= (A nand B) nand C; 
 end Behavioral;
