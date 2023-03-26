@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Mar 22 21:58:46 2023
+// Date        : Thu Mar 23 15:08:03 2023
 // Host        : LAPTOP-L5E1O48L running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file {D:/University/7/Electronica Digital
 //               I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.sim/sim_1/impl/timing/xsim/test_time_impl.v}

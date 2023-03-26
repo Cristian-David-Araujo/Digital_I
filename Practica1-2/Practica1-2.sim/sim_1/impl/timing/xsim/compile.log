@@ -2,5 +2,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/University/7/Electronica Digital
 INFO: [VRFC 10-311] analyzing module behavioral
 INFO: [VRFC 10-311] analyzing module completeAssembly
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sim_1/new/test.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'test'

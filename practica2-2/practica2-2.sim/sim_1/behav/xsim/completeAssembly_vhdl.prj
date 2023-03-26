@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../practica2-2.srcs/sources_1/new/ALU.vhd" \
+"../../../../practica2-2.srcs/sources_1/new/decoHEX.vhd" \
+"../../../../practica2-2.srcs/sources_1/new/completeAssembly.vhd" \
+
+# Do not sort compile order
+nosort

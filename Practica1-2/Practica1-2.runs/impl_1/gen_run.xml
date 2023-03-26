@@ -1,80 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1679539879">
-  <File Type="BITSTR-BMM" Name="completeAssembly_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="completeAssembly_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="completeAssembly_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="completeAssembly_power_routed.rpt"/>
   <File Type="PA-TCL" Name="completeAssembly.tcl"/>
-  <File Type="OPT-TIMING" Name="completeAssembly_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="completeAssembly_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="completeAssembly_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="completeAssembly_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="completeAssembly.msk"/>
+  <File Type="ROUTE-CLK" Name="completeAssembly_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="completeAssembly.vdi"/>
+  <File Type="BG-BIT" Name="completeAssembly.bit"/>
+  <File Type="BG-DRC" Name="completeAssembly.drc"/>
+  <File Type="BG-BGN" Name="completeAssembly.bgn"/>
+  <File Type="BG-BIN" Name="completeAssembly.bin"/>
+  <File Type="BITSTR-RBT" Name="completeAssembly.rbt"/>
+  <File Type="BITSTR-NKY" Name="completeAssembly.nky"/>
+  <File Type="BITSTR-BMM" Name="completeAssembly_bd.bmm"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="completeAssembly_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="completeAssembly.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="completeAssembly.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="completeAssembly.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="completeAssembly_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="completeAssembly.hwdef"/>
-  <File Type="PWROPT-DCP" Name="completeAssembly_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="completeAssembly_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="completeAssembly_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="completeAssembly_placed.dcp"/>
   <File Type="PLACE-IO" Name="completeAssembly_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="completeAssembly_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="completeAssembly_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="completeAssembly_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="completeAssembly_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="completeAssembly_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="completeAssembly_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="completeAssembly_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="completeAssembly_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="completeAssembly.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="completeAssembly_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="completeAssembly_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="completeAssembly_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="completeAssembly.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="completeAssembly_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="completeAssembly_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="completeAssembly_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="completeAssembly_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="completeAssembly_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="completeAssembly_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="completeAssembly_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="completeAssembly.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="completeAssembly_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="completeAssembly_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="completeAssembly_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="completeAssembly_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="completeAssembly_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="completeAssembly_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="completeAssembly_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="completeAssembly_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="completeAssembly_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="completeAssembly_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="completeAssembly_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="completeAssembly_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="completeAssembly_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="completeAssembly_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="completeAssembly_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="completeAssembly_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="completeAssembly_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="completeAssembly_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="completeAssembly_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="completeAssembly_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="completeAssembly_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="completeAssembly_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="completeAssembly_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="completeAssembly_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="completeAssembly_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="completeAssembly_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="completeAssembly_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="completeAssembly_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="completeAssembly_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="completeAssembly.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="completeAssembly_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="completeAssembly.rbt"/>
-  <File Type="BITSTR-NKY" Name="completeAssembly.nky"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="completeAssembly_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="completeAssembly_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="completeAssembly_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="completeAssembly.pdi"/>
   <File Type="RCFI_FILE" Name="completeAssembly.rcfi"/>
   <File Type="CFI_FILE" Name="completeAssembly.cfi"/>
   <File Type="RNPI_FILE" Name="completeAssembly.rnpi"/>
   <File Type="NPI_FILE" Name="completeAssembly.npi"/>
   <File Type="RBD_FILE" Name="completeAssembly.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="completeAssembly.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="completeAssembly.sysdef"/>
-  <File Type="BG-BGN" Name="completeAssembly.bgn"/>
-  <File Type="BG-DRC" Name="completeAssembly.drc"/>
-  <File Type="RDI-RDI" Name="completeAssembly.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/behavioral.vhd">
@@ -144,5 +126,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
