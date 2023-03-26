@@ -19,6 +19,7 @@ Compiling architecture behavioral of entity xil_defaultlib.behavioral [behaviora
 Compiling architecture behavioral of entity xil_defaultlib.dataFlow [dataflow_default]
 Compiling architecture behavioral of entity xil_defaultlib.gateNand2 [gatenand2_default]
 Compiling architecture behavioral of entity xil_defaultlib.structural [structural_default]
+Compiling architecture behavioral of entity xil_defaultlib.decoHex [decohex_default]
 Compiling architecture behavioral of entity xil_defaultlib.completeAssembly [completeassembly_default]
 Compiling architecture behavior of entity xil_defaultlib.test
 Built simulation snapshot test_behav

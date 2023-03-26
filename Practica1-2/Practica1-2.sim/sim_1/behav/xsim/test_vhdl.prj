@@ -3,6 +3,7 @@ vhdl xil_defaultlib  \
 "../../../../Practica1-2.srcs/sources_1/new/behavioral.vhd" \
 "../../../../Practica1-2.srcs/sources_1/new/completeAssembly.vhd" \
 "../../../../Practica1-2.srcs/sources_1/new/dataFlow.vhd" \
+"../../../../Practica1-2.srcs/sources_1/new/decoHEX.vhd" \
 "../../../../Practica1-2.srcs/sources_1/new/gateNand2.vhd" \
 "../../../../Practica1-2.srcs/sources_1/new/structural.vhd" \
 "../../../../Practica1-2.srcs/sim_1/new/test.vhd" \

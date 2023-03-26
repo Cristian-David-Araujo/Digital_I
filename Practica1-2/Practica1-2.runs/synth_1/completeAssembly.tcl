@@ -87,6 +87,7 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/behavioral.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/dataFlow.vhd}
+  {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/decoHEX.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/gateNand2.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/structural.vhd}
   {D:/University/7/Electronica Digital I/Laboratorio/Practica2/vivadoProject/Practica1-2/Practica1-2.srcs/sources_1/new/completeAssembly.vhd}
