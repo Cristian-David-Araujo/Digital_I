@@ -32,7 +32,6 @@ architecture Behavioral of test is
     signal XYZinput : STD_LOGIC_VECTOR(2 downto 0);
     signal coutExpected : STD_LOGIC;
     signal displayOutexpected : STD_LOGIC_VECTOR(6 downto 0);
-    signal activeDisplayexpected : STD_LOGIC_VECTOR(3 downto 0);
 
     signal coutTest : STD_LOGIC;
     signal displayOutTest : STD_LOGIC_VECTOR(6 downto 0);
@@ -61,8 +60,8 @@ architecture Behavioral of test is
             when "011" => ALUout := A1 + 2;
             when "100" => if A1 < "00010" then ALUout := "00000"; else ALUout := A1 - "00010"; end if;
             when "101" => ALUout := "01111";
-            when "110" => ALUout := B1 and "00010";
-            when "111" => if (A1 + B1) > "11000" then ALUout := "00000"; else ALUout := A1 + B1; end if;
+            when "110" => ALUout := B & "0";
+            when "111" => if (A1 + B1) > "11000" then ALUout := "10100"; else ALUout := A1 + B1; end if;
             when others => ALUout := "11111";
         end case;
         Cout <= ALUout(4);
@@ -85,7 +84,7 @@ architecture Behavioral of test is
             when "1101" => displayOut <= "1000010";
             when "1110" => displayOut <= "0110000";
             when "1111" => if operationSelect = "101" then displayOut <= "1111110"; else displayOut <= "0111000"; end if;
-            when others => displayOut <= "1111110";
+            when others => displayOut <= "0000000";
         end case;
 
     end  generateExpectedOutput;
