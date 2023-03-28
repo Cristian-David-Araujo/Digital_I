@@ -34,7 +34,7 @@ begin
             when "000" => -- OR operation
                 ALUout <= "0" & (A or B);
             when "001" => -- ADD operation
-                ALUout <= "0" & A + B;
+                ALUout <= ("0" &  A) + ("0" & B);
             when "010" => -- NOT operation
                 ALUout <= "0" & not B;
             when "011" => -- ADD 2 operation   
@@ -50,10 +50,10 @@ begin
             when "110" => -- MUL by 2 operation
                 ALUout <= B & "0";
             when "111" => -- ADD and check for overflow operation
-                if A + B > "11000" then
-                    ALUout <= "00000";
+                if ("0" &  A) + ("0" & B) > "11000" then
+                    ALUout <= "10100";
                 else
-                    ALUout <="0" &  A + B;
+                    ALUout <=("0" &  A) + ("0" & B);
                 end if;
             when others => -- default operation
                 ALUout <= "00000";
