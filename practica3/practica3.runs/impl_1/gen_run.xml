@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1681834367">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="completeAssembly_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="completeAssembly_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="completeAssembly.drc"/>
+  <File Type="BG-BGN" Name="completeAssembly.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="completeAssembly.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="completeAssembly.ltx"/>
+  <File Type="RBD_FILE" Name="completeAssembly.rbd"/>
+  <File Type="NPI_FILE" Name="completeAssembly.npi"/>
+  <File Type="RNPI_FILE" Name="completeAssembly.rnpi"/>
+  <File Type="CFI_FILE" Name="completeAssembly.cfi"/>
+  <File Type="RCFI_FILE" Name="completeAssembly.rcfi"/>
+  <File Type="RDI-RDI" Name="completeAssembly.vdi"/>
+  <File Type="PDI-FILE" Name="completeAssembly.pdi"/>
+  <File Type="BITSTR-MMI" Name="completeAssembly.mmi"/>
+  <File Type="BITSTR-BMM" Name="completeAssembly_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="completeAssembly.nky"/>
+  <File Type="BITSTR-RBT" Name="completeAssembly.rbt"/>
+  <File Type="BITSTR-MSK" Name="completeAssembly.msk"/>
+  <File Type="BG-BIN" Name="completeAssembly.bin"/>
+  <File Type="BG-BIT" Name="completeAssembly.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="completeAssembly_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="completeAssembly_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="completeAssembly_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="completeAssembly_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="completeAssembly_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="completeAssembly_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="completeAssembly_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="completeAssembly_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="completeAssembly_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="completeAssembly_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="completeAssembly_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="completeAssembly_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="completeAssembly_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="completeAssembly_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="completeAssembly_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="completeAssembly_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="completeAssembly_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="completeAssembly_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="completeAssembly_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="completeAssembly_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="completeAssembly_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="completeAssembly_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="completeAssembly_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="completeAssembly_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="completeAssembly_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="completeAssembly_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="completeAssembly_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="completeAssembly_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="completeAssembly_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="completeAssembly_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="completeAssembly_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="completeAssembly_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="completeAssembly_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="completeAssembly_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="completeAssembly_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="completeAssembly_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="completeAssembly_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="completeAssembly_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="completeAssembly_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="completeAssembly_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="completeAssembly_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="completeAssembly_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="completeAssembly_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="completeAssembly_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="completeAssembly_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="completeAssembly_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="completeAssembly_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="completeAssembly.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="completeAssembly_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="completeAssembly_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="completeAssembly_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="completeAssembly_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="completeAssembly_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="completeAssembly_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="completeAssembly.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ALU.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FFD.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/MUX2to1.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ROM_A.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ROM_B.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clkDivider.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/decoDisplay.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/driverDisplay.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/completeAssembly.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="completeAssembly"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../Basys3_Master3.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

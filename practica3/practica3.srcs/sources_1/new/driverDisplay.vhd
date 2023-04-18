@@ -5,6 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
 --library UNISIM;
@@ -35,15 +36,14 @@ architecture Behavioral of driverDisplay is
     --signal displayActiveAux : STD_LOGIC_VECTOR (3 downto 0);
 
 
-    signal binaryInThousands : STD_LOGIC_VECTOR (13 downto 0);
-    signal binaryInHundreds : STD_LOGIC_VECTOR (9 downto 0);
-    signal binaryInTens : STD_LOGIC_VECTOR (6 downto 0);
+    signal binaryInHundreds : STD_LOGIC_VECTOR (13 downto 0);
+    signal binaryInTens : STD_LOGIC_VECTOR (13 downto 0);
+    signal binaryInUnity : STD_LOGIC_VECTOR (13 downto 0);
     
 
     signal unity, tens, hundreds, thousands : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
-    binaryInThousands <= binaryIn(3 downto 0);
 
     --divide units, tens, hundreds and thousands
     thousands <= "0000" when (binaryIn < 1000) else
@@ -83,7 +83,9 @@ begin
             "1000" when (binaryInTens < 90) else
             "1001";
 
-    unity <= binaryInTens - (tens * "1010");
+    binaryInUnity <= binaryInTens - (tens * "1010");
+    
+    unity <= binaryInUnity(3 downto 0);
     
 
     process (clk)
