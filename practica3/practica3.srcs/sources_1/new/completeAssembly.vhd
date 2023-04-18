@@ -15,7 +15,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity completeAssembly is
     Port ( add_A, add_B : in STD_LOGIC_VECTOR(2 downto 0);
-           FA, FB : in STD_LOGIC;
+           FA, FB, en0, en1, en2 : in STD_LOGIC;
            sel_ALU : in STD_LOGIC_VECTOR (2 downto 0);
            en, dataA, dataB : in STD_LOGIC_VECTOR (3 downto 0);
            clk : in STD_LOGIC;
@@ -79,6 +79,7 @@ architecture Behavioral of completeAssembly is
 
     signal BA, BB, inALU1, inALU2: STD_LOGIC_VECTOR (3 downto 0);
     signal outALU : STD_LOGIC_VECTOR (4 downto 0);
+    signal outALU2 : STD_LOGIC_VECTOR (13 downto 0);
 
 
     signal activeDisplayAux : STD_LOGIC_VECTOR (3 downto 0);
@@ -113,7 +114,7 @@ begin
     FFD1 : FFD Port map (CLK => clk1ms, Data => BA, Enable => en0, Q => inALU1);
 
 
-    MUX2x1_2 : MUX2to2 Port map (in0 => dataB, in1 => outROM_B, selection => FB, MUXout => BB);
+    MUX2x1_2 : MUX2to1 Port map (in0 => dataB, in1 => outROM_B, selection => FB, MUXout => BB);
     FFD2 : FFD Port map (CLK => clk1ms, Data => BB, Enable => en1, Q => inALU2);
 
 
@@ -122,12 +123,12 @@ begin
     FFD3 : FFD Port map (CLK => clk1ms, Data => outALU(3 downto 0), Enable => en2, Q => outALU(3 downto 0));
 
     
- 
+    outALU2 <= "000000000"&outALU;
     -- Instantiate component "decoHEX" and assign values to its input and output ports
-    driverDisplay1 : driverDisplay Port map (binaryIn => "0000000000"&outALU, clk => clk4ms, displayActive => activeDisplay, displayOut => displayOutAux);
+    driverDisplay1 : driverDisplay Port map (binaryIn => outALU2, clk => clk4ms, displayActive => activeDisplay, displayOut => displayOutAux);
     -- Select the display to be active
     --- Assign a constant value to output port "alternativeDisplay" for show the caracter "-" in the display
-    displayOut <= "1111110" when XYZ = "101" else displayOutAux;
-    activeDisplay <= "0000" when XYZ = "101" else activeDisplayAux;
+    displayOut <= "1111110" when sel_ALU = "101" else displayOutAux;
+    activeDisplay <= "0000" when sel_ALU = "101" else activeDisplayAux;
 
 end Behavioral;

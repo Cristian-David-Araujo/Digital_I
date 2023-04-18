@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
 --library UNISIM;
@@ -31,6 +31,7 @@ architecture Behavioral of driverDisplay is
     end component decoDisplay;
 
     signal displayPosition : STD_LOGIC_VECTOR (1 downto 0);
+    signal displayIn : STD_LOGIC_VECTOR (3 downto 0);
     --signal displayActiveAux : STD_LOGIC_VECTOR (3 downto 0);
 
 
@@ -54,9 +55,9 @@ begin
                  "0110" when (binaryIn < 7000) else
                  "0111" when (binaryIn < 8000) else
                  "1000" when (binaryIn < 9000) else
-                 "1001" when others;
+                 "1001";
     
-    binaryINHundreds <= binaryIn - (thousands * 1000);
+    binaryINHundreds <= binaryIn - (thousands * "1111101000");
 
     hundreds <= "0000" when (binaryInHundreds < 100) else
                 "0001" when (binaryInHundreds < 200) else
@@ -67,9 +68,9 @@ begin
                 "0110" when (binaryInHundreds < 700) else
                 "0111" when (binaryInHundreds < 800) else
                 "1000" when (binaryInHundreds < 900) else
-                "1001" when others;
+                "1001";
 
-    binaryInTens <= binaryInHundreds - (hundreds * 100);
+    binaryInTens <= binaryInHundreds - (hundreds * "1100100");
 
     tens <= "0000" when (binaryInTens < 10) else
             "0001" when (binaryInTens < 20) else
@@ -80,9 +81,9 @@ begin
             "0110" when (binaryInTens < 70) else
             "0111" when (binaryInTens < 80) else
             "1000" when (binaryInTens < 90) else
-            "1001" when others;
+            "1001";
 
-    unity <= binaryInTens - (tens * 10);
+    unity <= binaryInTens - (tens * "1010");
     
 
     process (clk)
@@ -99,12 +100,12 @@ begin
     displayActive <= "1110" when (displayPosition = "00") else
                         "1101" when (displayPosition = "01") else
                         "1011" when (displayPosition = "10") else
-                        "0111" when others;
+                        "0111";
 
     displayIn <= unity when (displayPosition = "00") else
                   tens when (displayPosition = "01") else
                   hundreds when (displayPosition = "10") else
-                  thousands when others;
+                  thousands;
                   
-    decoDisplay: decoDisplay port map (displayIn => displayIn, displayOut => displayOut);
+    decoDisplay1: decoDisplay port map (binaryIn  => displayIn, displayOut => displayOut);
 end Behavioral;
