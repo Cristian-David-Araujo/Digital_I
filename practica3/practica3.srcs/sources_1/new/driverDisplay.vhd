@@ -17,7 +17,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --converts the value into a displayable format. The displays are multiplexed and updated every 4ms based on a clock signal
 --========================================================================
 entity driverDisplay is
-    Port (  binaryIn : in STD_LOGIC_VECTOR (13 downto 0);
+    Port (  binaryIn0, binaryIn1, binaryIn2, binaryIn3 : in STD_LOGIC_VECTOR (3 downto 0);
             clk : in STD_LOGIC; --Clock of 4ms
             displayActive : out STD_LOGIC_VECTOR (3 downto 0);
             displayOut : out STD_LOGIC_VECTOR (6 downto 0)
@@ -35,58 +35,7 @@ architecture Behavioral of driverDisplay is
     signal displayIn : STD_LOGIC_VECTOR (3 downto 0);
     --signal displayActiveAux : STD_LOGIC_VECTOR (3 downto 0);
 
-
-    signal binaryInHundreds : STD_LOGIC_VECTOR (13 downto 0);
-    signal binaryInTens : STD_LOGIC_VECTOR (13 downto 0);
-    signal binaryInUnity : STD_LOGIC_VECTOR (13 downto 0);
-    
-
-    signal unity, tens, hundreds, thousands : STD_LOGIC_VECTOR (3 downto 0);
-
 begin
-
-    --divide units, tens, hundreds and thousands
-    thousands <= "0000" when (binaryIn < 1000) else
-                 "0001" when (binaryIn < 2000) else
-                 "0010" when (binaryIn < 3000) else
-                 "0011" when (binaryIn < 4000) else
-                 "0100" when (binaryIn < 5000) else
-                 "0101" when (binaryIn < 6000) else
-                 "0110" when (binaryIn < 7000) else
-                 "0111" when (binaryIn < 8000) else
-                 "1000" when (binaryIn < 9000) else
-                 "1001";
-    
-    binaryINHundreds <= binaryIn - (thousands * "1111101000");
-
-    hundreds <= "0000" when (binaryInHundreds < 100) else
-                "0001" when (binaryInHundreds < 200) else
-                "0010" when (binaryInHundreds < 300) else
-                "0011" when (binaryInHundreds < 400) else
-                "0100" when (binaryInHundreds < 500) else
-                "0101" when (binaryInHundreds < 600) else
-                "0110" when (binaryInHundreds < 700) else
-                "0111" when (binaryInHundreds < 800) else
-                "1000" when (binaryInHundreds < 900) else
-                "1001";
-
-    binaryInTens <= binaryInHundreds - (hundreds * "1100100");
-
-    tens <= "0000" when (binaryInTens < 10) else
-            "0001" when (binaryInTens < 20) else
-            "0010" when (binaryInTens < 30) else
-            "0011" when (binaryInTens < 40) else
-            "0100" when (binaryInTens < 50) else
-            "0101" when (binaryInTens < 60) else
-            "0110" when (binaryInTens < 70) else
-            "0111" when (binaryInTens < 80) else
-            "1000" when (binaryInTens < 90) else
-            "1001";
-
-    binaryInUnity <= binaryInTens - (tens * "1010");
-    
-    unity <= binaryInUnity(3 downto 0);
-    
 
     process (clk)
     begin
@@ -104,10 +53,10 @@ begin
                         "1011" when (displayPosition = "10") else
                         "0111";
 
-    displayIn <= unity when (displayPosition = "00") else
-                  tens when (displayPosition = "01") else
-                  hundreds when (displayPosition = "10") else
-                  thousands;
+    displayIn <=  binaryIn3 when (displayPosition = "00") else
+                  binaryIn2 when (displayPosition = "01") else
+                  binaryIn1 when (displayPosition = "10") else
+                  binaryIn0;
                   
     decoDisplay1: decoDisplay port map (binaryIn  => displayIn, displayOut => displayOut);
 end Behavioral;

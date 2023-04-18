@@ -61,7 +61,7 @@ architecture Behavioral of completeAssembly is
     end component;
 
     component driverDisplay is
-        Port (  binaryIn : in STD_LOGIC_VECTOR (13 downto 0);
+        Port (  binaryIn0, binaryIn1, binaryIn2, binaryIn3 : in STD_LOGIC_VECTOR (13 downto 0);
                 clk : in STD_LOGIC;
                 displayActive : out STD_LOGIC_VECTOR (3 downto 0);
                 displayOut : out STD_LOGIC_VECTOR (6 downto 0));
@@ -92,7 +92,13 @@ architecture Behavioral of completeAssembly is
     signal outFFD3 : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
-    --Instans of clock 
+    --Instans of clock
+    --Clock 20ns
+    clkDivider20ns : clkDivider
+                generic map (countLimit => 1000)
+                Port map (clk => clk,
+                         newClk => clk20ns);
+
     --Clock 1ms
     clkDivider1ms : clkDivider
                 generic map (countLimit => 50000)
@@ -104,12 +110,6 @@ begin
                 generic map (countLimit => 4)
                 Port map (clk => clk1ms,
                          newClk => clk4ms);
-
-    --Clock 1s
-    clkDivider20ns : clkDivider
-                generic map (countLimit => 1000)
-                Port map (clk => clk,
-                         newClk => clk20ns);
 
     --Instastion of ROM_A and ROM_B
     ROM_A1 : ROM_A Port map (address => add_A, data => outROM_A);
@@ -129,9 +129,16 @@ begin
     ALU1 : ALU Port map (A => inALU1, B => inALU2, operationSelect => sel_ALU, operationOut => outALU(3 downto 0), Cout => outALU(4));
     FFD3 : FFD Port map (CLK => clk, Data => outALU(3 downto 0), Enable => en2, Q => outFFD3);
     cout <= outALU(4);
-    outALU2 <= "0000000000"&outFFD3;
+
     -- Instantiate component "decoHEX" and assign values to its input and output ports
-    driverDisplay1 : driverDisplay Port map (binaryIn => outALU2, clk => clk4ms, displayActive => activeDisplay, displayOut => displayOutAux);
+    driverDisplay1 : driverDisplay Port map (binaryIn0 => operationSelect,
+                                             binaryIn1 => outALU1,
+                                             binaryIn2 => outALU2,
+                                             binaryIn3 => outFFD3,
+                                             clk => clk4ms,
+                                             displayActive => activeDisplayAux,
+                                             displayOut => displayOutAux);
+    
     -- Select the display to be active
     --- Assign a constant value to output port "alternativeDisplay" for show the caracter "-" in the display
     displayOut <= "1111110" when sel_ALU = "101" else displayOutAux;
