@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Tue Apr 18 11:13:11 2023
-| Host         : PARALED04 running 64-bit Ubuntu 22.04.2 LTS
+| Date         : Tue Apr 18 16:40:41 2023
+| Host         : ACERLED07 running 64-bit Ubuntu 22.04.1 LTS
 | Command      : report_control_sets -verbose -file completeAssembly_control_sets_placed.rpt
 | Design       : completeAssembly
 | Device       : xc7a35t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |     8 |
+|    Minimum number of control sets                        |     8 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    39 |
+| Unused register locations in slices containing registers |    32 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
-| >= 0 to < 4        |     4 |
+| Total control sets |     8 |
+| >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     3 |
+| >= 16              |     2 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            7 |
+| No           | No                    | No                     |               7 |            5 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              96 |           24 |
-| Yes          | No                    | No                     |               8 |            2 |
+| No           | Yes                   | No                     |              64 |           16 |
+| Yes          | No                    | No                     |               8 |            6 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               1 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -70,19 +70,17 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------------+---------------+------------------------------------------+------------------+----------------+--------------+
-|          Clock Signal          | Enable Signal |             Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------------------------+---------------+------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG                 | en1_IBUF      | FFD2/Q[1]_i_1_n_0                        |                1 |              1 |         1.00 |
-|  actualCount_reg[0]_i_2__0_n_0 |               |                                          |                1 |              1 |         1.00 |
-|  actualCount_reg[0]_i_2_n_0    |               |                                          |                1 |              1 |         1.00 |
-|  clkDivider4ms/newClkAux_reg_0 |               |                                          |                2 |              2 |         1.00 |
-|  clk_IBUF_BUFG                 |               |                                          |                3 |              4 |         1.33 |
-|  clk_IBUF_BUFG                 | en2_IBUF      |                                          |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                 | en0_IBUF      |                                          |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                 |               | clkDivider20ns/actualCount1_carry__2_n_4 |                8 |             32 |         4.00 |
-|  actualCount_reg[0]_i_2__0_n_0 |               | clkDivider4ms/actualCount1_carry__2_n_4  |                8 |             32 |         4.00 |
-|  actualCount_reg[0]_i_2_n_0    |               | clkDivider1ms/clear                      |                8 |             32 |         4.00 |
-+--------------------------------+---------------+------------------------------------------+------------------+----------------+--------------+
++--------------------------------+---------------+-----------------------------------------+------------------+----------------+--------------+
+|          Clock Signal          | Enable Signal |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------+---------------+-----------------------------------------+------------------+----------------+--------------+
+|  actualCount_reg[0]_i_2_n_0    |               |                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                 | en1_IBUF      | FFD2/Q[1]_i_1_n_0                       |                1 |              1 |         1.00 |
+|  clkDivider1ms/newClkAux_reg_0 |               |                                         |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                 |               |                                         |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG                 | en2_IBUF      |                                         |                4 |              4 |         1.00 |
+|  clk_IBUF_BUFG                 | en0_IBUF      |                                         |                2 |              4 |         2.00 |
+|  actualCount_reg[0]_i_2_n_0    |               | clkDivider1ms/actualCount1_carry__2_n_5 |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                 |               | clkDivider20ns/clear                    |                8 |             32 |         4.00 |
++--------------------------------+---------------+-----------------------------------------+------------------+----------------+--------------+
 
 

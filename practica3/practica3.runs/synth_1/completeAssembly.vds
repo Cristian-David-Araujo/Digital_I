@@ -2,13 +2,13 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Apr 18 11:12:00 2023
-# Process ID: 149740
-# Current directory: /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/synth_1
+# Start of session at: Tue Apr 18 16:39:19 2023
+# Process ID: 12670
+# Current directory: /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/synth_1
 # Command line: vivado -log completeAssembly.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source completeAssembly.tcl
-# Log file: /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.vds
-# Journal file: /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/synth_1/vivado.jou
-# Running On: PARALED04, OS: Linux, CPU Frequency: 3700.000 MHz, CPU Physical cores: 6, Host memory: 33327 MB
+# Log file: /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.vds
+# Journal file: /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/synth_1/vivado.jou
+# Running On: ACERLED07, OS: Linux, CPU Frequency: 3000.000 MHz, CPU Physical cores: 4, Host memory: 16669 MB
 #-----------------------------------------------------------
 source completeAssembly.tcl -notrace
 Command: synth_design -top completeAssembly -part xc7a35tcpg236-1
@@ -18,140 +18,129 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 149792
+INFO: [Synth 8-7075] Helper process launched with PID 12691
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1930.605 ; gain = 368.801 ; free physical = 22939 ; free virtual = 57947
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2911.074; parent = 1930.609; children = 980.465
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1930.574 ; gain = 369.801 ; free physical = 8911 ; free virtual = 43704
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2934.066; parent = 1930.578; children = 1003.488
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'completeAssembly' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'completeAssembly' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:30]
+	Parameter countLimit bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'clkDivider' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:14' bound to instance 'clkDivider20ns' of component 'clkDivider' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'clkDivider' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
+	Parameter countLimit bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clkDivider' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
 	Parameter countLimit bound to: 50000 - type: integer 
-INFO: [Synth 8-3491] module 'clkDivider' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:14' bound to instance 'clkDivider1ms' of component 'clkDivider' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:97]
-INFO: [Synth 8-638] synthesizing module 'clkDivider' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
+INFO: [Synth 8-3491] module 'clkDivider' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:14' bound to instance 'clkDivider1ms' of component 'clkDivider' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'clkDivider__parameterized1' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
 	Parameter countLimit bound to: 50000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clkDivider' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
-	Parameter countLimit bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'clkDivider' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:14' bound to instance 'clkDivider4ms' of component 'clkDivider' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:103]
-INFO: [Synth 8-638] synthesizing module 'clkDivider__parameterized1' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
-	Parameter countLimit bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clkDivider__parameterized1' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
-	Parameter countLimit bound to: 1000 - type: integer 
-INFO: [Synth 8-3491] module 'clkDivider' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:14' bound to instance 'clkDivider20ns' of component 'clkDivider' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:109]
-INFO: [Synth 8-638] synthesizing module 'clkDivider__parameterized3' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
-	Parameter countLimit bound to: 1000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clkDivider__parameterized3' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
-INFO: [Synth 8-3491] module 'ROM_A' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:25' bound to instance 'ROM_A1' of component 'ROM_A' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'ROM_A' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'ROM_A' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:30]
-INFO: [Synth 8-3491] module 'ROM_B' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:25' bound to instance 'ROM_B1' of component 'ROM_B' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:117]
-INFO: [Synth 8-638] synthesizing module 'ROM_B' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'ROM_B' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:30]
-INFO: [Synth 8-3491] module 'MUX2to1' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:14' bound to instance 'MUX2x1_1' of component 'MUX2to1' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:120]
-INFO: [Synth 8-638] synthesizing module 'MUX2to1' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'MUX2to1' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:20]
-INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD1' of component 'FFD' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:121]
-INFO: [Synth 8-638] synthesizing module 'FFD' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'FFD' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:24]
-INFO: [Synth 8-3491] module 'MUX2to1' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:14' bound to instance 'MUX2x1_2' of component 'MUX2to1' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:124]
-INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD2' of component 'FFD' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:125]
-INFO: [Synth 8-3491] module 'ALU' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:25' bound to instance 'ALU1' of component 'ALU' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:129]
-INFO: [Synth 8-638] synthesizing module 'ALU' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:33]
-WARNING: [Synth 8-614] signal 'A' is read in the process but is not in the sensitivity list [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:43]
-WARNING: [Synth 8-614] signal 'B' is read in the process but is not in the sensitivity list [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:33]
-INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD3' of component 'FFD' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:130]
-INFO: [Synth 8-3491] module 'driverDisplay' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:19' bound to instance 'driverDisplay1' of component 'driverDisplay' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:134]
-INFO: [Synth 8-638] synthesizing module 'driverDisplay' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:27]
-INFO: [Synth 8-3491] module 'decoDisplay' declared at '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:16' bound to instance 'decoDisplay1' of component 'decoDisplay' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:112]
-INFO: [Synth 8-638] synthesizing module 'decoDisplay' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'decoDisplay' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'driverDisplay' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'completeAssembly' (0#1) [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:30]
-WARNING: [Synth 8-3848] Net activeDisplayAux in module/entity completeAssembly does not have driver. [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'clkDivider__parameterized1' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd:22]
+INFO: [Synth 8-3491] module 'ROM_A' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:25' bound to instance 'ROM_A1' of component 'ROM_A' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'ROM_A' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'ROM_A' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd:30]
+INFO: [Synth 8-3491] module 'ROM_B' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:25' bound to instance 'ROM_B1' of component 'ROM_B' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'ROM_B' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'ROM_B' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd:30]
+INFO: [Synth 8-3491] module 'MUX2to1' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:14' bound to instance 'MUX2x1_1' of component 'MUX2to1' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'MUX2to1' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'MUX2to1' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:20]
+INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD1' of component 'FFD' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'FFD' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'FFD' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:24]
+INFO: [Synth 8-3491] module 'MUX2to1' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd:14' bound to instance 'MUX2x1_2' of component 'MUX2to1' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:115]
+INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD2' of component 'FFD' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:116]
+INFO: [Synth 8-3491] module 'ALU' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:18' bound to instance 'ALU1' of component 'ALU' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'ALU' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:27]
+INFO: [Synth 8-226] default block is never used [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd:27]
+INFO: [Synth 8-3491] module 'FFD' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd:15' bound to instance 'FFD3' of component 'FFD' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:121]
+INFO: [Synth 8-3491] module 'driverDisplay' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:19' bound to instance 'driverDisplay1' of component 'driverDisplay' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'driverDisplay' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:27]
+INFO: [Synth 8-3491] module 'decoDisplay' declared at '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:16' bound to instance 'decoDisplay1' of component 'decoDisplay' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'decoDisplay' [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'decoDisplay' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'driverDisplay' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'completeAssembly' (0#1) [/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd:30]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2000.574 ; gain = 438.770 ; free physical = 23026 ; free virtual = 58035
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2981.043; parent = 2000.578; children = 980.465
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1998.543 ; gain = 437.770 ; free physical = 8995 ; free virtual = 43789
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3002.035; parent = 1998.547; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2015.418 ; gain = 453.613 ; free physical = 23025 ; free virtual = 58034
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2995.887; parent = 2015.422; children = 980.465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2013.387 ; gain = 452.613 ; free physical = 8995 ; free virtual = 43789
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3016.879; parent = 2013.391; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2015.418 ; gain = 453.613 ; free physical = 23025 ; free virtual = 58034
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2995.887; parent = 2015.422; children = 980.465
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2013.387 ; gain = 452.613 ; free physical = 8995 ; free virtual = 43789
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3016.879; parent = 2013.391; children = 1003.488
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2015.418 ; gain = 0.000 ; free physical = 23021 ; free virtual = 58029
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2013.387 ; gain = 0.000 ; free physical = 8994 ; free virtual = 43787
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/estudiante/Desktop/Digitales/Digital_I-master/Basys3_Master3.xdc]
-Finished Parsing XDC File [/home/estudiante/Desktop/Digitales/Digital_I-master/Basys3_Master3.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/estudiante/Desktop/Digitales/Digital_I-master/Basys3_Master3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/completeAssembly_propImpl.xdc].
+Parsing XDC File [/home/estudiante/Desktop/DigitalesI/Digital_I-master/Basys3_Master3.xdc]
+Finished Parsing XDC File [/home/estudiante/Desktop/DigitalesI/Digital_I-master/Basys3_Master3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/estudiante/Desktop/DigitalesI/Digital_I-master/Basys3_Master3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/completeAssembly_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/completeAssembly_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.168 ; gain = 0.000 ; free physical = 22934 ; free virtual = 57942
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.121 ; gain = 0.000 ; free physical = 8908 ; free virtual = 43701
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2178.168 ; gain = 0.000 ; free physical = 22934 ; free virtual = 57942
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.121 ; gain = 0.000 ; free physical = 8908 ; free virtual = 43701
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22992 ; free virtual = 58001
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8972 ; free virtual = 43766
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22992 ; free virtual = 58001
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8972 ; free virtual = 43766
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22992 ; free virtual = 58001
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8972 ; free virtual = 43766
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22980 ; free virtual = 57989
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8958 ; free virtual = 43752
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   14 Bit       Adders := 1     
-	   4 Input   14 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 3     
-	   3 Input    4 Bit       Adders := 1     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input    7 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 2     
 	   8 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 2     
 	   4 Input    4 Bit        Muxes := 2     
-	   9 Input    4 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -168,46 +157,34 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'i_2/driverDisplay1/i_10/O' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'i_2/driverDisplay1/i_11/O' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'i_2/driverDisplay1/i_12/O' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'i_2/driverDisplay1/i_13/O' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd:102]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22965 ; free virtual = 57978
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1359.613; parent = 1147.493; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8934 ; free virtual = 43732
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1363.549; parent = 1150.327; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22860 ; free virtual = 57873
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1462.487; parent = 1250.989; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8834 ; free virtual = 43632
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1465.718; parent = 1253.471; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22850 ; free virtual = 57864
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1465.827; parent = 1254.339; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8825 ; free virtual = 43623
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1465.894; parent = 1253.656; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1466.812; parent = 1255.323; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.085; parent = 1254.848; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -225,49 +202,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.112; parent = 1255.624; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.266; parent = 1255.027; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.128; parent = 1255.640; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.281; parent = 1255.043; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.144; parent = 1255.655; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.281; parent = 1255.043; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.159; parent = 1255.671; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.297; parent = 1255.059; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.159; parent = 1255.671; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.297; parent = 1255.059; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.175; parent = 1255.687; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.312; parent = 1255.074; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -283,43 +260,42 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     3|
-|2     |CARRY4 |    66|
-|3     |LUT1   |    28|
-|4     |LUT2   |   132|
-|5     |LUT3   |     7|
-|6     |LUT4   |     7|
-|7     |LUT5   |    19|
-|8     |LUT6   |    23|
-|9     |FDRE   |   112|
+|1     |BUFG   |     2|
+|2     |CARRY4 |    25|
+|3     |LUT1   |     4|
+|4     |LUT2   |    43|
+|5     |LUT3   |     3|
+|6     |LUT4   |     5|
+|7     |LUT5   |    18|
+|8     |LUT6   |    19|
+|9     |FDRE   |    79|
 |10    |FDSE   |     1|
 |11    |IBUF   |    22|
 |12    |OBUF   |    12|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22848 ; free virtual = 57862
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.206; parent = 1255.718; children = 212.120
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3126.621; parent = 2146.156; children = 980.465
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.121 ; gain = 576.348 ; free physical = 8817 ; free virtual = 43615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1467.344; parent = 1255.105; children = 213.222
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3140.613; parent = 2137.125; children = 1003.488
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 12 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2178.168 ; gain = 453.613 ; free physical = 22900 ; free virtual = 57913
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2178.168 ; gain = 616.363 ; free physical = 22900 ; free virtual = 57913
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2137.121 ; gain = 452.613 ; free physical = 8879 ; free virtual = 43677
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2137.129 ; gain = 576.348 ; free physical = 8879 ; free virtual = 43677
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.168 ; gain = 0.000 ; free physical = 22893 ; free virtual = 57907
-INFO: [Netlist 29-17] Analyzing 66 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.129 ; gain = 0.000 ; free physical = 8917 ; free virtual = 43715
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.168 ; gain = 0.000 ; free physical = 22955 ; free virtual = 57969
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.129 ; gain = 0.000 ; free physical = 8919 ; free virtual = 43717
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 3b771989
+Synth Design complete, checksum: d6a18d6
 INFO: [Common 17-83] Releasing license: Synthesis
-52 Infos, 4 Warnings, 12 Critical Warnings and 0 Errors encountered.
+50 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 2178.168 ; gain = 912.559 ; free physical = 23163 ; free virtual = 58176
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint '/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 2137.129 ; gain = 872.551 ; free physical = 9117 ; free virtual = 43915
+INFO: [Common 17-1381] The checkpoint '/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file completeAssembly_utilization_synth.rpt -pb completeAssembly_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 18 11:12:30 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 18 16:39:55 2023...

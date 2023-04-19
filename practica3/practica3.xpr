@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="61" Path="/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.xpr">
+<Project Version="7" Minor="61" Path="/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="484a9529ef104ea38f475d98e34578cc"/>

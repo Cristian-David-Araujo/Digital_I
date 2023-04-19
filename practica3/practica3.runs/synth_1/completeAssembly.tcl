@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.tcl"
+  variable script "/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/synth_1/completeAssembly.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,31 +71,31 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 3
+set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.cache/wt [current_project]
-set_property parent.project_path /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.xpr [current_project]
+set_property webtalk.parent_dir /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.cache/wt [current_project]
+set_property parent.project_path /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.cache/ip [current_project]
+set_property ip_output_repo /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd
-  /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ALU.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/FFD.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/MUX2to1.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_A.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/ROM_B.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/clkDivider.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/decoDisplay.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/driverDisplay.vhd
+  /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.srcs/sources_1/new/completeAssembly.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -106,8 +106,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/estudiante/Desktop/Digitales/Digital_I-master/Basys3_Master3.xdc
-set_property used_in_implementation false [get_files /home/estudiante/Desktop/Digitales/Digital_I-master/Basys3_Master3.xdc]
+read_xdc /home/estudiante/Desktop/DigitalesI/Digital_I-master/Basys3_Master3.xdc
+set_property used_in_implementation false [get_files /home/estudiante/Desktop/DigitalesI/Digital_I-master/Basys3_Master3.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

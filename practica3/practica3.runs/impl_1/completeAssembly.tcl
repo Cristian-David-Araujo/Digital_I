@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.runs/impl_1/completeAssembly.tcl"
+  variable script "/home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.runs/impl_1/completeAssembly.tcl"
   variable category "vivado_impl"
 }
 
@@ -124,9 +124,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param xicom.use_bs_reader 1
-  set_param chipscope.maxJobs 3
+  set_param chipscope.maxJobs 1
   open_checkpoint completeAssembly_routed.dcp
-  set_property webtalk.parent_dir /home/estudiante/Desktop/Digitales/Digital_I-master/practica3/practica3.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/estudiante/Desktop/DigitalesI/Digital_I-master/practica3/practica3.cache/wt [current_project]
 set_property TOP completeAssembly [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
