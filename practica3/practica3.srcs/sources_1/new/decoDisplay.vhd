@@ -19,7 +19,7 @@ entity decoDisplay is
          );
 end decoDisplay;
 
-architecture Behavioral of decoDisplay is
+ architecture Behavioral of decoDisplay is
 
 begin
     displayOut <= "0000001" when binaryIn = "00000" else

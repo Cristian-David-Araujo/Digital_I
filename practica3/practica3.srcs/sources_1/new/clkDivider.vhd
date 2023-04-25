@@ -31,7 +31,7 @@ begin
     process(clk)
     begin
         if clk'event and clk='1' then
-            if actualCount < countLimit then
+            if actualCount < (countLimit - 1) then
                 actualCount <= actualCount + 1;
             else
                 actualCount <= 0;
