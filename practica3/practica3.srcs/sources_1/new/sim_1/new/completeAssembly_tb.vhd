@@ -105,13 +105,14 @@ begin
                 FA <= FAB(1);
                 FB <= FAB(0);
                 FAB := FAB + 1; -- We increment the value of the variable FAB to test all the possible values
+                wait for 100 ms; -- We wait 100 ms to see the result in the display
             end loop;
             -- We increment this signals to test different values
             add_A <= add_A + 1;
             add_B <= add_B + 1; 
             dataA <= dataA + 1; 
             dataB <= dataB + 1; 
-            wait for 100 ms; -- We wait 100 ms to see the result in the display
+            wait until rising_edge(clk);
 
         end loop;
         wait;
