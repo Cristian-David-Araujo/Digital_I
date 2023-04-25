@@ -133,27 +133,28 @@ begin
 
         -- This loop test all the values of sel_ALU
         for i in 0 to 7 loop
-            for j in 0 to 7 loop
+            --for j in 0 to 7 loop
             
                 -- Here we change the value of sel_ALU in each iteration
                 sel_ALU <= std_logic_vector(to_unsigned(i, 3));
-                enables := std_logic_vector(to_unsigned(j, 3));
+                --enables := std_logic_vector(to_unsigned(j, 3));
                 -- We change the value of add_A and add_B in each iteration so we can test different values
                 increment(add_A, add_B, FAFB); -- Here we change the values of add_A and add_B
     
-                en0 <= enables(0);
-                en1 <= enables(1);
-                en2 <= enables(2);
+                en0 <= '1';
+                en1 <= '1';
+                en2 <= '0';
                 
-                wait until rising_edge(clk);
-                wait until rising_edge(clk);
+                wait for 120ns;
                 
-                --en0 <= '0';
-                --en1 <= '0';
-                --en2 <= '1';
+                en0 <= '0';
+                en1 <= '0';
+                en2 <= '1';
                 wait until rising_edge(clk);
-                --wait until rising_edge(clk);
-           end loop;
+                wait until rising_edge(clk);
+                wait until rising_edge(clk);
+                wait until rising_edge(clk);
+           --end loop;
             
             
         end loop;
