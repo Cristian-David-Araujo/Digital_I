@@ -1,0 +1,43 @@
+
+*** Running vivado
+    with args -log draw_Bird.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source draw_Bird.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source draw_Bird.tcl -notrace
+Command: synth_design -top draw_Bird -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18628
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1065.648 ; gain = 0.000
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-2361] multiple declarations of unsigned included via multiple use clauses; none are made directly visible [D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.srcs/sources_1/new/draw_Bird.vhd:105]
+INFO: [Synth 8-994] unsigned is declared here [./vhdl_packages/1993/src/syn_arit.vhd:27]
+ERROR: [Synth 8-1603] another match is here [./vhdl_packages/1993/src/numeric_std.vhd:65]
+ComMsgMgrException: type error near %s ; expected type %s: Invalid c_string in format.
+
+ERROR: [Synth 8-2778] type error near %s ; expected type %s
+ERROR: [Synth 8-2029] formal arg has no actual or default value [D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.srcs/sources_1/new/draw_Bird.vhd:105]
+INFO: [Synth 8-994] arg is declared here [./vhdl_packages/1993/src/numeric_std.vhd:701]
+INFO: [Synth 8-994] arg is declared here [./vhdl_packages/1993/src/numeric_std.vhd:701]
+ERROR: [Synth 8-2236] indexed name prefix type integer is not an array type [D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.srcs/sources_1/new/draw_Bird.vhd:105]
+INFO: [Synth 8-2810] unit behavioral ignored due to previous errors [D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.srcs/sources_1/new/draw_Bird.vhd:17]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1065.648 ; gain = 0.000
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+10 Infos, 0 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Tue May 23 22:28:27 2023...

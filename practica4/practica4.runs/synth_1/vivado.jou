@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue May 23 22:27:44 2023
+# Process ID: 18420
+# Current directory: D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.runs/synth_1
+# Command line: vivado.exe -log draw_Bird.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source draw_Bird.tcl
+# Log file: D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.runs/synth_1/draw_Bird.vds
+# Journal file: D:/University/7/Electronica Digital I/Laboratorio/Digital_I/practica4/practica4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source draw_Bird.tcl -notrace
