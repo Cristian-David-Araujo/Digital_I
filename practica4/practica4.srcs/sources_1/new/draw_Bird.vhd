@@ -36,17 +36,6 @@ architecture Behavioral of draw_Bird is
     );
     end component;
 
-    component clkDivider is
-    generic (countLimit : integer);
-    port (
-        clk : in STD_LOGIC;
-        newClk : out STD_LOGIC
-    );
-    end component clkDivider;
-
-    --Declaration of clocks
-    signal clk50ms : STD_LOGIC;
-
     signal frame : STD_LOGIC_VECTOR (1 downto 0);
     
     signal addressX_aux, addressY_aux : STD_LOGIC_VECTOR (10 downto 0);
@@ -54,12 +43,6 @@ architecture Behavioral of draw_Bird is
     signal dataROM1, dataROM2, dataROM3, data : STD_LOGIC_VECTOR (15 downto 0);
 begin
 
-    --Instans of clock
-    --Clock 50ms
-    clkDivider50ms : clkDivider
-                generic map (countLimit => 25000000)
-                Port map (clk => clk,
-                         newClk => clk50ms);
 
     --Instans of ROMs
     ROM_Bird1_1 : ROM_Bird1
@@ -81,9 +64,9 @@ begin
     );
 
     --Count for multiplex the frame of bird
-    process(clk50ms)
+    process(clk)
     begin
-        if clk50ms'event and clk50ms = '1' then
+        if clk'event and clk = '1' then
             if frame = "10" then
                 frame <= "00";
             else
@@ -94,7 +77,7 @@ begin
 
     addressY_aux <= Vcount - posY;
     addressY <= addressY_aux(3 downto 0);
-    addressX_aux <= Vcount - posX;
+    addressX_aux <= Hcount - posX;
     addressX <= addressX_aux(3 downto 0);
 
     data <= dataROM1 when frame = "00" else
