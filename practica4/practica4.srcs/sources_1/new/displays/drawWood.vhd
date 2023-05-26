@@ -10,6 +10,7 @@ entity drawWood is
            posY : in  STD_LOGIC_VECTOR (10 downto 0);
            Hcount : in  STD_LOGIC_VECTOR (10 downto 0);
            Vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+           woodcolor: out STD_LOGIC_VECTOR (11 downto 0);
            draw : out  STD_LOGIC);
 end drawWood;
 
@@ -26,6 +27,7 @@ architecture Behavioral of drawWood is
     signal addressY : STD_LOGIC_VECTOR (4 downto 0);
     signal addressX : STD_LOGIC_VECTOR (5 downto 0);
     signal dataROM : STD_LOGIC_VECTOR (39 downto 0);
+    signal drawwood : STD_LOGIC;
 begin
 
 
@@ -43,7 +45,10 @@ begin
     addressX <= addressX_aux(5 downto 0);
 
     --data <= dataROM
-    
-    draw <= dataROM(to_integer(unsigned(addressX(4 downto 0))));
+    --'1' when (data(to_integer(unsigned(addressX(3 downto 0)))) = '1') and (posX + 15 >= Hcount and posX <= Hcount and posY + 15 >= Vcount and posY <= Vcount) else '0'
+    drawwood <= '1' when dataROM(to_integer(unsigned(addressX(5 downto 0)))) = '1' and (posX + 39 >= Hcount and posX <= Hcount and posY + 31 >= Vcount and posY <= Vcount) else '0';
+    draw <= drawwood;
+    -- when draw is 1 the color is brown
+    woodcolor <=  X"730" when drawwood = '1' else X"fff";
     
 end Behavioral;

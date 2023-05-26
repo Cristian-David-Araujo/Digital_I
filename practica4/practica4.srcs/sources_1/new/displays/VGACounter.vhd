@@ -105,11 +105,22 @@ architecture Behavioral of VGACounter is
         port(
              hcount : in  STD_LOGIC_VECTOR (10 downto 0);
              vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+			 clk : in  STD_LOGIC; -- clock for the colors
              rgb : out STD_LOGIC_VECTOR (11 downto 0); -- color
              paintLetters : out  STD_LOGIC
         );
       end component;
 
+	Component drawWood
+		Port ( 
+			clk : in  STD_LOGIC;
+			posX : in  STD_LOGIC_VECTOR (10 downto 0);
+			posY : in  STD_LOGIC_VECTOR (10 downto 0);
+			Hcount : in  STD_LOGIC_VECTOR (10 downto 0);
+			Vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+			draw : out  STD_LOGIC
+			);
+	end Component;
 	
 	COMPONENT AlphaNumerico
 	GENERIC ( LW: INTEGER:=10;
@@ -144,8 +155,16 @@ architecture Behavioral of VGACounter is
 	signal CLK_1Hz : STD_LOGIC:='0';
 	signal count_clk : INTEGER:=0;
 	signal clk_interno : STD_LOGIC;
-begin
 
+	--drawWood signals
+	signal drawWoods : STD_LOGIC;
+	-- x in integer is 300 for woodposx
+	signal woodposX : std_logic_vector(10 downto 0) := "00100101100";
+	-- y in integer is 200 for woodposy
+	signal woodposY : std_logic_vector(10 downto 0) := "00011001000";
+
+begin
+	--Reloj de 1hz
 	CLK_DIV: process(clk_interno)
 	begin
 		if(clk_interno'event and clk_interno='1') then
@@ -182,12 +201,24 @@ begin
 		BCD1 => decenas,
 		BCD0 => unidades
 	);
+
+	--wood
+	wood: drawWood
+		Port map(
+			clk => CLK_1Hz,
+			posX => woodposX,
+			posY => woodposY,
+			Hcount => hcount,
+			Vcount => vcount,
+			draw => drawWoods
+		);
 	
 	-- 34 segments displays, names
 	Names: drawNames
 	Port map(
 		hcount => hcount,
 		vcount => vcount,
+		clk => CLK_1Hz,
 		rgb => lettersColor,
 		paintLetters => paintNames
 	);
@@ -240,10 +271,13 @@ begin
 		   "100" when paint0='1' else
 		   "111";
 			   
-	rgb_aux3 <= rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&
-		    rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&
-		    rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0) when paintNames='0'
-		else lettersColor;
+	rgb_aux3 <= (rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) &
+             rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) &
+             rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0)) when (paintNames = '0' and drawWoods = '0') else
+            lettersColor when paintNames = '1' else
+            "000000000000" when drawWoods = '1' else
+            "111111111111";
+
 
 	Inst_vga_ctrl_640x480_60Hz: vga_ctrl_640x480_60Hz 
 	PORT MAP(
@@ -269,4 +303,3 @@ begin
         end process;
 	
 end Behavioral;
-

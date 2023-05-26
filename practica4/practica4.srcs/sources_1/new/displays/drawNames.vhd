@@ -7,6 +7,7 @@ entity drawNames is
         port(
              hcount : in  STD_LOGIC_VECTOR (10 downto 0);
              vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+             clk : in  STD_LOGIC;
              rgb : out STD_LOGIC_VECTOR (11 downto 0);
              paintLetters : out  STD_LOGIC
         );
@@ -38,7 +39,7 @@ architecture Behavioral of drawNames is
 
 
     -- Signals for drawing the letters
-    signal color : STD_LOGIC_VECTOR (11 downto 0);
+    signal color : STD_LOGIC_VECTOR (11 downto 0) := "000010001111";
     signal auxPaintLetters : std_logic;
 
     begin
@@ -167,7 +168,14 @@ architecture Behavioral of drawNames is
 
         -- color of the letters
         -- when paintLetters = '1' we paint the letters
-        color <= "000010001111" when auxPaintLetters = '1' else "000000000000";
+        -- The letter will change color each rising edge of the clock
+        process (clk)
+        begin
+        if rising_edge(clk) then
+            color <= color + "100110011001";
+        end if;
+        end process;
+        --color <= "000010001111" when auxPaintLetters = '1' else "000000000000";
 
         -- Outputs
         paintletters <= auxPaintLetters;
