@@ -84,6 +84,8 @@ begin
             dataROM2 when frame = "01" else
             dataROM3;
     
-    draw <= data(to_integer(unsigned(addressX(3 downto 0))));
+    draw <=  '1' when (data(to_integer(unsigned(addressX(3 downto 0)))) = '1') and (posX + 15 >= Hcount and posX <= Hcount and posY + 15 >= Vcount and posY <= Vcount) else '0';
+    
+    
     
 end Behavioral;
