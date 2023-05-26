@@ -235,12 +235,15 @@ begin
 	);
 
 	rgb_aux1 <= 
-				"110" when paint2='1' else
+		   "110" when paint2='1' else
 	           "001" when paint1='1' else
-				  "100" when paint0='1' else
-				  "111";
-	rgb_aux3 <= rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0) when paintNames='0' else
-				lettersColor;
+		   "100" when paint0='1' else
+		   "111";
+			   
+	rgb_aux3 <= rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&rgb_aux1(2)&
+		    rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&rgb_aux1(1)&
+		    rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0)&rgb_aux1(0) when paintNames='0'
+		else lettersColor;
 
 	Inst_vga_ctrl_640x480_60Hz: vga_ctrl_640x480_60Hz 
 	PORT MAP(
