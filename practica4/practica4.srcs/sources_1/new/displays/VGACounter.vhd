@@ -202,7 +202,7 @@ begin
 	PORT MAP(
 		HCOUNT => hcount,
 		VCOUNT => vcount,
-		VALUE => "1001",--centenas,
+		VALUE => centenas,
 		PAINT => paint2
 	);
 	
@@ -216,7 +216,7 @@ begin
 	PORT MAP(
 		HCOUNT => hcount,
 		VCOUNT => vcount,
-		VALUE => "1001",--decenas,
+		VALUE => decenas,
 		PAINT => paint1
 	);
 	
@@ -230,7 +230,7 @@ begin
 	PORT MAP(
 		HCOUNT => hcount,
 		VCOUNT => vcount,
-		VALUE => "1001",--unidades,
+		VALUE => unidades,
 		PAINT => paint0
 	);
 
