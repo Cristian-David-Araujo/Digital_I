@@ -111,15 +111,14 @@ architecture Behavioral of VGACounter is
         );
       end component;
 
-	Component drawWood
-		Port ( 
-			clk : in  STD_LOGIC;
-			posX : in  STD_LOGIC_VECTOR (10 downto 0);
-			posY : in  STD_LOGIC_VECTOR (10 downto 0);
-			Hcount : in  STD_LOGIC_VECTOR (10 downto 0);
-			Vcount : in  STD_LOGIC_VECTOR (10 downto 0);
-			draw : out  STD_LOGIC
-			);
+	Component drawingwoods
+	port(
+        hcount : in std_logic_vector(10 downto 0);
+        vcount : in std_logic_vector(10 downto 0);
+        clk : in std_logic;
+        color : out std_logic_vector(11 downto 0);
+        paintwood : out std_logic
+    );
 	end Component;
 	
 	COMPONENT AlphaNumerico
@@ -159,9 +158,10 @@ architecture Behavioral of VGACounter is
 	--drawWood signals
 	signal drawWoods : STD_LOGIC;
 	-- x in integer is 300 for woodposx
-	signal woodposX : std_logic_vector(10 downto 0) := "00100101100";
+	--signal woodposX : std_logic_vector(10 downto 0) := "00100101100";
 	-- y in integer is 200 for woodposy
-	signal woodposY : std_logic_vector(10 downto 0) := "00011001000";
+	--signal woodposY : std_logic_vector(10 downto 0) := "00011001000";
+	signal woodcolor : STD_LOGIC_VECTOR (11 downto 0);
 
 begin
 	--Reloj de 1hz
@@ -203,15 +203,14 @@ begin
 	);
 
 	--wood
-	wood: drawWood
-		Port map(
-			clk => CLK_1Hz,
-			posX => woodposX,
-			posY => woodposY,
-			Hcount => hcount,
-			Vcount => vcount,
-			draw => drawWoods
-		);
+	wood: drawingwoods
+	port map(
+		hcount => hcount,
+		vcount => vcount,
+		clk => CLK_1Hz,
+		color => woodcolor,
+		paintwood => drawWoods
+	);
 	
 	-- 34 segments displays, names
 	Names: drawNames
@@ -274,8 +273,8 @@ begin
 	rgb_aux3 <= (rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) &
              rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) &
              rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0)) when (paintNames = '0' and drawWoods = '0') else
-            lettersColor when paintNames = '1' else
-            "000000000000" when drawWoods = '1' else
+            lettersColor when (paintNames = '1' and drawWoods = '0') else
+        	woodcolor when (drawWoods = '1' and paintNames = '0') else
             "111111111111";
 
 
