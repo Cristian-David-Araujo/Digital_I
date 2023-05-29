@@ -37,7 +37,9 @@ entity VGACounter is
            PBTON : in  STD_LOGIC;
            HS : out  STD_LOGIC;
            VS : out  STD_LOGIC;
-           RGB : out  STD_LOGIC_VECTOR (11 downto 0));
+           RGB : out  STD_LOGIC_VECTOR (11 downto 0);
+		   -- keyboard
+		   PS2Clk, PS2Data: in std_logic);
 			  
 	-- Las siguientes declaraciones realizan la asignacion de pines (version aantigua) 
 --	attribute loc: string;
@@ -51,6 +53,16 @@ entity VGACounter is
 end VGACounter;
 
 architecture Behavioral of VGACounter is
+	component main -- movimiento del personaje y control del teclado
+	Port ( clk, reset: in std_logic;
+		hcount, vcount: in std_logic_vector(10 downto 0);
+	
+		PS2Clk, PS2Data: in std_logic;
+		posx : out std_logic_vector (10 downto 0);
+		paintbird: out std_logic);
+	end component;
+
+
 	-- Declaramos componentes
 	COMPONENT BIN2BCD_0a999
 	PORT(
@@ -135,14 +147,25 @@ architecture Behavioral of VGACounter is
 		PAINT : OUT std_logic
 		);
 	END COMPONENT;
+
+	component clkDivider is
+        generic (countLimit : integer);
+        Port (  clk : in STD_LOGIC;
+                newClk : out STD_LOGIC
+             );
+    end component clkDivider;
 	
+	-- 10ms clock
+	signal clk_10ms : STD_LOGIC;
 	-- Declaramos seales
+	signal colordisplays : STD_LOGIC_VECTOR (11 downto 0);
 	signal hcount : STD_LOGIC_VECTOR (10 downto 0);
 	signal vcount : STD_LOGIC_VECTOR (10 downto 0);
 	signal paintNames : STD_LOGIC;
 	signal paint2 : STD_LOGIC;
 	signal paint1 : STD_LOGIC;
 	signal paint0 : STD_LOGIC;
+	signal paintdisplay : STD_LOGIC;
 	signal rgb_aux1 : STD_LOGIC_VECTOR (2 downto 0);
 	signal rgb_aux2 : STD_LOGIC_VECTOR (11 downto 0);
 	signal rgb_aux3 : STD_LOGIC_VECTOR (11 downto 0);
@@ -162,7 +185,11 @@ architecture Behavioral of VGACounter is
 	-- y in integer is 200 for woodposy
 	--signal woodposY : std_logic_vector(10 downto 0) := "00011001000";
 	signal woodcolor : STD_LOGIC_VECTOR (11 downto 0);
+	
+	signal drawbird : STD_LOGIC;
+	signal posXbird : std_logic_vector (10 downto 0);
 
+	signal score : std_logic := '0';
 begin
 	--Reloj de 1hz
 	CLK_DIV: process(clk_interno)
@@ -176,14 +203,20 @@ begin
 			end if;
 		end if;
 	end process;
-	
 
-	CONT: process(CLK_1Hz,RST)
+	-- 10ms clock
+	clkDivider_10ms: clkDivider
+	generic map (countLimit => 125000)
+	port map (clk => clk_interno,
+			  newClk => clk_10ms);
+
+	CONT: process(score,RST)
 	begin
 		if (RST='1') then
 			conteo <= (others=>'0');
-		elsif (CLK_1Hz'event and CLK_1Hz='1') then
-			if(PBTON='1') then
+		elsif (score'event and score='1') then
+			--if(PBTON='1') then
+			--if (score = '1') then
 				if (conteo=999) then
 					conteo <= (others=>'0');
 				else
@@ -192,8 +225,23 @@ begin
 			else
 				conteo <= conteo;
 			end if;
-		end if;
+--		end if;
 	end process;
+
+	-- main
+	bird: main
+	port map(
+		clk => clk,
+		reset => RST,
+		hcount => hcount,
+		vcount => vcount,
+		PS2Clk => PS2Clk,
+		PS2Data => PS2Data,
+		posx => posXbird,
+		paintbird => drawbird
+	);
+	
+	
 	
 	BIN2BCD: BIN2BCD_0a999 PORT MAP(
 		BIN => conteo,
@@ -207,7 +255,7 @@ begin
 	port map(
 		hcount => hcount,
 		vcount => vcount,
-		clk => CLK_1Hz,
+		clk => clk_10ms,
 		color => woodcolor,
 		paintwood => drawWoods
 	);
@@ -269,13 +317,21 @@ begin
 	           "001" when paint1='1' else
 		   "100" when paint0='1' else
 		   "111";
+
+	paintdisplay <= paint2 or paint1 or paint0;
+
+	colorDisplays <= (rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) &
+	            rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) &
+	             rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0));
 			   
-	rgb_aux3 <= (rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) & rgb_aux1(2) &
-             rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) & rgb_aux1(1) &
-             rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0) & rgb_aux1(0)) when (paintNames = '0' and drawWoods = '0') else
-            lettersColor when (paintNames = '1' and drawWoods = '0') else
-        	woodcolor when (drawWoods = '1' and paintNames = '0') else
-            "111111111111";
+	rgb_aux3 <= colorDisplays when (paintdisplay = '1' and paintNames = '0' and drawWoods = '0' and drawbird = '0') else
+            lettersColor when (paintdisplay = '0' and paintNames = '1' and drawWoods = '0' and drawbird = '0') else
+        	woodcolor when (paintdisplay = '0' and paintNames = '0' and drawWoods = '1' and drawbird = '0') else
+			X"000" when (paintdisplay = '0' and paintNames = '0' and drawWoods = '0' and drawbird = '1') else
+			"111111111111";
+
+	score <= '1' when posXbird >= "01001011000" else 
+			'0' when posXbird < "01001011000" ;
 
 
 	Inst_vga_ctrl_640x480_60Hz: vga_ctrl_640x480_60Hz 

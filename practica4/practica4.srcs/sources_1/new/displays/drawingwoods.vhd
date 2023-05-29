@@ -99,7 +99,7 @@ architecture Behavioral of drawingwoods is
 
 
 
-    --Cuando el último tronco llega al final de la pantalla, se empieza a dibujar arriba
+    --Cuando el ?ltimo tronco llega al final de la pantalla, se empieza a dibujar arriba
 
     
 
@@ -175,6 +175,6 @@ architecture Behavioral of drawingwoods is
     paint <= draw1 or draw2 or draw3 or draw4 or draw5 or draw6;
     paintwood <= paint;
     --color <= X"730" when (draw1 = '1' or draw2 = '1' or draw3 = '1') else X"FFF";
-    color <= X"730" when (paint = '1') else X"FFF";
+    color <= X"000" when (paint = '1') else X"FFF";
 
 end Behavioral;
