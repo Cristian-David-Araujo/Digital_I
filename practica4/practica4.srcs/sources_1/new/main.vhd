@@ -54,13 +54,19 @@ architecture Behavioral of main is
     );
     end component;
     
+    component degraded is
+    port(
+        Vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+        RGBout : out STD_LOGIC_VECTOR (11 downto 0));
+    end component;
+    
     type machineMoveBird is (s1, s2, s3, s4);
     signal stateMoveBird : machineMoveBird;
     
     signal posYBird : std_logic_vector (10 downto 0) := "00011010111";
     signal Hcount, Vcount, posXBird:  std_logic_vector (10 downto 0);
-	signal RGBin : STD_LOGIC_VECTOR (11 downto 0);
-	signal clk20ns, clk10ms, clk60ms, drawBird, asciiStart, UPBird, DOWNBird : STD_LOGIC;
+	signal RGBin, RGBbackground : STD_LOGIC_VECTOR (11 downto 0);
+	signal clk20ns, clk10ms, clk60ms, drawBird, asciiStart, UPBird, DOWNBird, HS : STD_LOGIC;
 	signal asciiData : STD_LOGIC_VECTOR (6 downto 0);
 begin
 
@@ -144,9 +150,13 @@ begin
                 posXBird <= (others => '0');
             end if;
         end if;
-        end process;                      
+        end process;
+    
+    degradade1 : degraded
+        port map( Vcount => Vcount,
+                  RGBout => RGBbackground);                  
     
     RGBin <= x"000" when drawBird = '1' else
-            x"FFF";
+             RGBbackground;
  
 end Behavioral;
