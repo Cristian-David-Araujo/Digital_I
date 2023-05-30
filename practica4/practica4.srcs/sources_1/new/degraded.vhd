@@ -22,7 +22,7 @@ end degraded;
 architecture Behavioral of degraded is
     signal RGB : STD_LOGIC_VECTOR (11 downto 0) := x"00F";
     
-    signal count1 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    signal count : STD_LOGIC_VECTOR (1 downto 0) := "00";
 begin
 
     RGBout <= RGB;
@@ -30,16 +30,16 @@ begin
     process (Vcount(0))
     begin
         if rising_edge(Vcount(0)) then
-            if count1 < 1 then
-                count1 <= count1 + 1;
+            if count < 1 then
+                count <= count + 1;
             else
-                count1 <= (others => '0');
+                count <= (others => '0');
                 RGB <= RGB + 1;
             end if;
             
             if Vcount >= 479 then
                 RGB <= x"00F"
-                count1 <= (others => '0');
+                count <= (others => '0');
             end if;
             
         end if;
