@@ -175,7 +175,6 @@ architecture Behavioral of drawNames is
             color <= color + "10011001001";
         end if;
         end process;
-        --color <= "000010001111" when auxPaintLetters = '1' else "000000000000";
 
         -- Outputs
         paintletters <= auxPaintLetters;
