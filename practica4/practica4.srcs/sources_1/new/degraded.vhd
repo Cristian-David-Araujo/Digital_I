@@ -20,32 +20,25 @@ entity degraded is
 end degraded;
 
 architecture Behavioral of degraded is
-    signal R : STD_LOGIC_VECTOR (3 downto 0) := x"0";
-    signal G : STD_LOGIC_VECTOR (3 downto 0) := x"7";
-    signal B : STD_LOGIC_VECTOR (3 downto 0) := x"A";
+    signal RGB : STD_LOGIC_VECTOR (11 downto 0) := x"00F";
     
-    signal count1 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
+    signal count1 : STD_LOGIC_VECTOR (1 downto 0) := "00";
 begin
 
-    RGBout <= R & G & B;
+    RGBout <= RGB;
     
     process (Vcount(0))
     begin
         if rising_edge(Vcount(0)) then
-            if count1 < 10 then
+            if count1 < 1 then
                 count1 <= count1 + 1;
             else
                 count1 <= (others => '0');
-                if G < 15 then
-                    G <= G + 1;
-                elsif B > 0 then
-                    B <= B - 1;
-                end if;
+                RGB <= RGB + 1;
             end if;
             
             if Vcount >= 479 then
-                G <= x"7";
-                B <= x"A";
+                RGB <= x"00F"
                 count1 <= (others => '0');
             end if;
             
