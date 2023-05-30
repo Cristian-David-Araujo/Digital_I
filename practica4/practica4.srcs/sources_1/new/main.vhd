@@ -66,7 +66,7 @@ architecture Behavioral of main is
     signal posYBird : std_logic_vector (10 downto 0) := "00011010111";
     signal Hcount, Vcount, posXBird:  std_logic_vector (10 downto 0);
 	signal RGBin, RGBbackground : STD_LOGIC_VECTOR (11 downto 0);
-	signal clk20ns, clk10ms, clk60ms, drawBird, asciiStart, UPBird, DOWNBird, HS : STD_LOGIC;
+	signal clk20ns, clk2ms, clk60ms, drawBird, asciiStart, UPBird, DOWNBird, HS : STD_LOGIC;
 	signal asciiData : STD_LOGIC_VECTOR (6 downto 0);
 begin
 
@@ -92,15 +92,15 @@ begin
             end if;
         end process;
     --Instans of clock
-    --Clock 60ms
-    clkDivider10ms : clkDivider
-        generic map (countLimit => 500000)
+    --Clock 2ms
+    clkDivider2ms : clkDivider
+        generic map (countLimit => 100000)
         port map(clk => clk20ns,
-                newClk => clk10ms);
+                newClk => clk2ms);
     --Clock 60ms
     clkDivider60ms : clkDivider
-        generic map (countLimit => 6)
-        port map(clk => clk10ms,
+        generic map (countLimit => 30)
+        port map(clk => clk2ms,
                 newClk => clk60ms);
                          
     draw_Bird1: draw_Bird
@@ -118,7 +118,7 @@ begin
                   ascii_new => asciiStart,
                   ascii_code => asciiData);
 
-    keyboardPress: process(asciiStart, asciiData, clk10ms)
+    keyboardPress: process(asciiStart, asciiData, clk2ms)
         begin
             if (asciiStart = '1') then
                 if (asciiData = x"66" or asciiData = x"46") then --fF
@@ -130,24 +130,29 @@ begin
                 end if;
             end if;
             
-            if rising_edge(clk10ms) then 
+            if rising_edge(clk2ms) then 
             if (UPBird = '1') and ((posYBird + 15) <= 463) then
-                posYBird <= posYBird + 4;
+                posYBird <= posYBird + 1;
                 UPBird <= '0';
             elsif (DOWNBird = '1') and (posYBird - 8>= 50) then
-                posYBird <= posYBird - 4;
+                posYBird <= posYBird - 1;
                 DOWNBird <= '0';
             end if;
             end if;
         end process;
     
-    moveBird: process(clk10ms)
+    moveBird: process(clk2ms, reset)
         begin
-        if rising_edge(clk10ms) then 
-            if ((posXBird + 15) <= 639) then
-                posXBird <= posXBird + 4;
-            else
-                posXBird <= (others => '0');
+        if reset = '1' then
+            posXBird <= (others => '0');
+            
+        else
+            if rising_edge(clk2ms) then 
+                if ((posXBird + 15) <= 639) then
+                    posXBird <= posXBird + 1;
+                else
+                    posXBird <= (others => '0');
+                end if;
             end if;
         end if;
         end process;
