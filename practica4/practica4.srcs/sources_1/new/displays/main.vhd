@@ -32,20 +32,6 @@ architecture Behavioral of main is
            RGB : out  STD_LOGIC_VECTOR (11 downto 0));
     end component VGACounter;
     
-    component vga_ctrl_640x480_60Hz is
-    port(
-        rst         : in std_logic;
-        clk   : in std_logic;
-        rgb_in     : in std_logic_vector(11 downto 0);     
-        HS          : out std_logic;
-        VS          : out std_logic;
-        hcount      : out std_logic_vector(10 downto 0);
-        vcount      : out std_logic_vector(10 downto 0);
-        rgb_out     : out std_logic_vector(11 downto 0);
-        blank       : out std_logic
-    );
-    end component;
-    
     component keyboard2ASCII is
     port(
         clk        : IN  STD_LOGIC;                     --system clock input
@@ -65,9 +51,6 @@ architecture Behavioral of main is
         draw : out  STD_LOGIC
     );
     end component;
-    
-    type machineMoveBird is (s1, s2, s3, s4);
-    signal stateMoveBird : machineMoveBird;
     
     signal posYBird : std_logic_vector (10 downto 0) := "00011010111";
     signal posXBird:  std_logic_vector (10 downto 0);
@@ -94,7 +77,8 @@ begin
         generic map (countLimit => 6)
         port map(clk => clk10ms,
                 newClk => clk60ms);
-                         
+	
+    --Instantiation of components to be used                 
     draw_Bird1: draw_Bird
         port map( clk => clk60ms,
                   posX => posXBird,
@@ -109,7 +93,8 @@ begin
                   ps2_data => PS2Data,
                   ascii_new => asciiStart,
                   ascii_code => asciiData);
-
+	    
+    --Checking of key presses and also movement on the Y axis of the character
     keyboardPress: process(asciiStart, asciiData, clk10ms)
         begin
             if (asciiStart = '1') then
@@ -132,7 +117,8 @@ begin
             end if;
             end if;
         end process;
-    
+		    
+     --X-axis motion generator
      moveBird: process(clk10ms, reset)
         begin
         if reset = '1' then
