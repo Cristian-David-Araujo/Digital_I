@@ -1,5 +1,5 @@
---This code is to control the positions in which the character will be displayed,
---Taking the information from the drawing of a ROMs
+--This code is to control the positions in which the figure will be shown to be painted, returning a draw 1 to be painted in a certain position.
+--Taking the information from a ROMs drawing
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
