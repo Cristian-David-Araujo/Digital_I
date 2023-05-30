@@ -1,3 +1,5 @@
+-- This code is to generate a gradient effect on the screen,
+--in which it goes from a blue to a green color.
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -20,6 +22,7 @@ entity degraded is
 end degraded;
 
 architecture Behavioral of degraded is
+    --initial values
     signal R : STD_LOGIC_VECTOR (3 downto 0) := x"0";
     signal G : STD_LOGIC_VECTOR (3 downto 0) := x"0";
     signal B : STD_LOGIC_VECTOR (3 downto 0) := x"F";
@@ -30,19 +33,24 @@ begin
     
     process (Vcount(0))
     begin
+        --Each time you change columns
         if rising_edge(Vcount(0)) then
+            --Segmentation of a range of rows that will be painted with the same color.
             if count < 8 then
                 count <= count + 1;
             else
                 if Vcount < 239 then
+                    --addition of green shade
                     G <= G + 1;
                 else
+                    --green fading
                     B <= B - 1;
                 end if;
                 
                 count <= (others => '0');
             end if;
             
+            --When the column counter reaches the end, the initial RGB values are set.
             if Vcount >= 479 then
                 R <= X"0";
                 G <= X"0";
