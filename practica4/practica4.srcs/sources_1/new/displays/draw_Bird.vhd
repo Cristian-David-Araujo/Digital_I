@@ -1,3 +1,7 @@
+--This code is to control the positions in which the character will be shown,
+--taking the information from the drawings of 3 different ROMs and generating
+--the simulation of a movement (exchanging sprites)
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
@@ -74,16 +78,19 @@ begin
             end if;            
         end if;
     end process;
-
+    
+    --Control of ROMS positions to be read out
     addressY_aux <= Vcount - posY;
     addressY <= addressY_aux(3 downto 0);
     addressX_aux <= Hcount - posX;
     addressX <= addressX_aux(3 downto 0);
-
+    
+    --Multiplexing of the sprites to be used, controlled by the frame signal to know which of the 3 ROMs to use.
     data <= dataROM1 when frame = "00" else
             dataROM2 when frame = "01" else
             dataROM3;
     
+    --The output of the ROM information is conditioned so that the image is not repeated in all possible positions.
     draw <=  '1' when (data(to_integer(unsigned(addressX(3 downto 0)))) = '1') and (posX + 15 >= Hcount and posX <= Hcount and posY + 15 >= Vcount and posY <= Vcount) else '0';
     
     
