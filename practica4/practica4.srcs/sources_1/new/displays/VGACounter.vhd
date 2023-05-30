@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    05:33:54 05/20/2014 
 -- Design Name: 
--- Module Name:    VGACounter - Behavioral 
+-- Module Name:    Main - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity VGACounter is
+entity Main is
     Port ( CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;
            PBTON : in  STD_LOGIC;
@@ -50,9 +50,9 @@ entity VGACounter is
 --	attribute loc of VS	: signal is "U3"; -- Driver VGA
 --	attribute loc of RGB : signal is "R9,T8,R8,N8,P8,P6,U5,U4"; -- Driver VGA
 	
-end VGACounter;
+end Main;
 
-architecture Behavioral of VGACounter is
+architecture Behavioral of Main is
 	
 	-- First, all components are declared
 	
