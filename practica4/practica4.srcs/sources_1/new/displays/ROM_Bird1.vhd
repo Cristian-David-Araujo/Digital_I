@@ -1,3 +1,7 @@
+--In this code is to generate a ROM in which is stored the information of a 16 x 16 image
+--that will be used to plot on the screen, when the stored information is a 1 indicates 
+--that you have to paint that pixel.
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
