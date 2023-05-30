@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 
-entity main is
+entity birdMovement is
     Port ( clk, reset: in std_logic;
 		   hcount, vcount: in std_logic_vector(10 downto 0);
            
@@ -12,9 +12,9 @@ entity main is
            paintbird: out std_logic
            );
 
-end main;
+end birdMovement;
 
-architecture Behavioral of main is
+architecture Behavioral of birdMovement is
 
     component clkDivider is
         generic (countLimit : integer);
