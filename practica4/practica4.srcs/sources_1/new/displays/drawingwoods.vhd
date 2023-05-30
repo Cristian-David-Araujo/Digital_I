@@ -99,11 +99,8 @@ architecture Behavioral of drawingwoods is
 
 
 
-    --Cuando el ?ltimo tronco llega al final de la pantalla, se empieza a dibujar arriba
-
-    
-
-    -- move the woods
+    --When the last wood reaches the end of the screen, it starts to be drawn at the top.
+    -- Process for the movement of woods
     process(clk)
     begin
         if rising_edge(clk) then
@@ -171,10 +168,11 @@ architecture Behavioral of drawingwoods is
         end if;
     end process;
 
-    -- paint the woods
+    -- Check if any of the trunks is drawn
     paint <= draw1 or draw2 or draw3 or draw4 or draw5 or draw6;
     paintwood <= paint;
     --color <= X"730" when (draw1 = '1' or draw2 = '1' or draw3 = '1') else X"FFF";
+    -- The default color of the trunk is black, the rest is left in the background color.
     color <= X"000" when (paint = '1') else X"FFF";
 
 end Behavioral;
