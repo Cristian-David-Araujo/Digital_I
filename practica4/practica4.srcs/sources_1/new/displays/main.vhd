@@ -133,16 +133,21 @@ begin
             end if;
         end process;
     
-    moveBird: process(clk10ms)
+     moveBird: process(clk10ms, reset)
         begin
-        if rising_edge(clk10ms) then 
-            if ((posXBird + 15) <= 639) then
-                posXBird <= posXBird + 4;
-            else
-                posXBird <= (others => '0');
+        if reset = '1' then
+            posXBird <= (others => '0');
+            
+        else
+            if rising_edge(clk10ms) then 
+                if ((posXBird + 15) <= 639) then
+                    posXBird <= posXBird + 4;
+                else
+                    posXBird <= (others => '0');
+                end if;
             end if;
         end if;
-        end process;    
+        end process;
 
     paintBird <= drawBird;
     posX <= posXbird;

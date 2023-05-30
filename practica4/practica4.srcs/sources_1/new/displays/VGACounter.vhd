@@ -62,6 +62,13 @@ architecture Behavioral of VGACounter is
 		paintbird: out std_logic);
 	end component;
 
+	-- background
+	component degraded is
+		port(
+			Vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+			RGBout : out STD_LOGIC_VECTOR (11 downto 0));
+		end component;
+
 
 	-- Declaramos componentes
 	COMPONENT BIN2BCD_0a999
@@ -190,6 +197,8 @@ architecture Behavioral of VGACounter is
 	signal posXbird : std_logic_vector (10 downto 0);
 
 	signal score : std_logic := '0';
+	signal crash : std_logic := '0';
+	signal background : std_logic_vector (11 downto 0);
 begin
 	--Reloj de 1hz
 	CLK_DIV: process(clk_interno)
@@ -204,15 +213,17 @@ begin
 		end if;
 	end process;
 
-	-- 10ms clock
+	-- 2.5ms clock 125000
+	--3 ms 150000
 	clkDivider_10ms: clkDivider
-	generic map (countLimit => 125000)
+	generic map (countLimit => 300000)
 	port map (clk => clk_interno,
 			  newClk => clk_10ms);
 
-	CONT: process(score,RST)
+	CONT: process(score,crash)
 	begin
-		if (RST='1') then
+		--if (RST='1') then
+		if (crash='1') then
 			conteo <= (others=>'0');
 		elsif (score'event and score='1') then
 			--if(PBTON='1') then
@@ -220,11 +231,11 @@ begin
 				if (conteo=999) then
 					conteo <= (others=>'0');
 				else
-					conteo <= conteo + 1;
+					conteo <= conteo + 5;
 				end if;
-			else
-				conteo <= conteo;
-			end if;
+		else
+			conteo <= conteo;
+		end if;
 --		end if;
 	end process;
 
@@ -232,7 +243,7 @@ begin
 	bird: main
 	port map(
 		clk => clk,
-		reset => RST,
+		reset => crash,
 		hcount => hcount,
 		vcount => vcount,
 		PS2Clk => PS2Clk,
@@ -240,8 +251,13 @@ begin
 		posx => posXbird,
 		paintbird => drawbird
 	);
-	
-	
+
+	-- background
+	background1: degraded
+	port map(
+		Vcount => vcount,
+		RGBout => background
+	);
 	
 	BIN2BCD: BIN2BCD_0a999 PORT MAP(
 		BIN => conteo,
@@ -314,7 +330,7 @@ begin
 
 	rgb_aux1 <= 
 		   "110" when paint2='1' else
-	           "001" when paint1='1' else
+	           "101" when paint1='1' else
 		   "100" when paint0='1' else
 		   "111";
 
@@ -328,10 +344,15 @@ begin
             lettersColor when (paintdisplay = '0' and paintNames = '1' and drawWoods = '0' and drawbird = '0') else
         	woodcolor when (paintdisplay = '0' and paintNames = '0' and drawWoods = '1' and drawbird = '0') else
 			X"000" when (paintdisplay = '0' and paintNames = '0' and drawWoods = '0' and drawbird = '1') else
-			"111111111111";
+			background;
+	
 
-	score <= '1' when posXbird >= "01001011000" else 
-			'0' when posXbird < "01001011000" ;
+
+	crash <= '1' when (drawbird = '1' and drawWoods = '1' and ((posxbird + 15) > "00111110100") and posxbird <= "01000011100") else
+		'0';
+	--01001011000 600
+	score <= '1' when posXbird >= "01010000000" else --640
+			'0' when posXbird < "01010000000" ;
 
 
 	Inst_vga_ctrl_640x480_60Hz: vga_ctrl_640x480_60Hz 

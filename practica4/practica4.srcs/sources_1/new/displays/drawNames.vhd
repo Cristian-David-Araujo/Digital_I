@@ -172,7 +172,7 @@ architecture Behavioral of drawNames is
         process (clk)
         begin
         if rising_edge(clk) then
-            color <= color + "100110011001";
+            color <= color + "10011001001";
         end if;
         end process;
         --color <= "000010001111" when auxPaintLetters = '1' else "000000000000";
